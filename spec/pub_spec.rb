@@ -44,4 +44,9 @@ class PubTest < MiniTest::Test
 
   end
 
+  def test_check_age
+    assert_equal(21, @customer.age)
+  end
+
+
 end

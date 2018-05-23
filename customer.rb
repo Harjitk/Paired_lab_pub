@@ -10,8 +10,13 @@ class Customer
   end
 
   def buy_a_drink_from(pub)
-    drink = pub.remove_drinks
-    @wallet -= drink.price
-    pub.till += drink.price
+    if @age >= 18
+      if @drunkness <= 10
+      drink = pub.remove_drinks
+      @wallet -= drink.price
+      pub.till += drink.price
+      @drunkness += drink.alcohol_level
+    end
+    end
   end
 end
